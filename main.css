@@ -34,6 +34,8 @@ body {
 
 .links a:hover {
   transform: scale(1.2);
+  background-color: white;
+  border-radius: 30%;
 }
 .links a:hover i.fa-google {
   color: #ea4335;
@@ -46,6 +48,9 @@ body {
 }
 .links a:hover i.fa-twitter {
   color: #1da1f2;
+}
+.links a:hover i.fa-code {
+  color: #ff0000;
 }
 .links a:hover i.fa-linkedin-in {
   color: #0a66c2;
@@ -85,6 +90,7 @@ body {
     -ms-grid-rows: 50% 50%;
     -ms-grid-columns: 50% 50%;
     grid-template: 50% 50%/50% 50%;
+    cursor: pointer;
   }
   .square:first-child {
     border-bottom: 1px solid #333;
@@ -107,6 +113,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    cursor: pointer;
   }
   .dayContainer .circle .day {
     font-size: 0.75vw;
@@ -143,7 +150,7 @@ body {
   #monthLabel {
     margin: 0;
     cursor: default;
-    text-shadow: 2px 2px 2px #ccc;
+    text-shadow: 1px 1px 1px #c96919;
     display: inline;
     padding: 0 1em;
     -webkit-user-select: none;
@@ -151,6 +158,7 @@ body {
     -ms-user-select: none;
     user-select: none;
   }
+
   #info {
     display: flex;
     justify-content: center;
@@ -195,6 +203,7 @@ body {
   }
   .emptyDay {
     background: #c96919;
+    cursor: default;
   }
 
   .seanSocial a img {
@@ -235,6 +244,7 @@ body {
     -ms-grid-rows: 50% 50%;
     -ms-grid-columns: 50% 50%;
     grid-template: 50% 50%/50% 50%;
+    cursor: pointer;
   }
   .square:first-child {
     border-bottom: 1px solid #333;
@@ -258,6 +268,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #c96919;
+    cursor: pointer;
   }
   .dayContainer .circle .day {
     font-size: 0.75vw;
@@ -293,7 +304,7 @@ body {
   #monthLabel {
     margin: 0;
     cursor: default;
-    text-shadow: 2px 2px 2px #ccc;
+    text-shadow: 1px 1px 1px #c96919;
     display: inline;
     padding: 0 1em;
     -webkit-user-select: none;
@@ -349,6 +360,7 @@ body {
   }
   .emptyDay {
     background: #c96919;
+    cursor: default;
   }
 
   .hidden {
