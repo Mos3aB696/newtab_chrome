@@ -1,0 +1,363 @@
+html {
+  background: url("./01.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-blend-mode: multiply;
+  z-index: -1;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+  text-align: center;
+  min-width: 450px;
+  color: white;
+}
+.container {
+  margin: 0px 50px;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  padding: 6px 10px;
+  margin: 40px 0;
+  border-radius: 5px;
+  background: #c96919;
+}
+
+.links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: black;
+  transition: transform 0.3s;
+}
+
+.links a:hover {
+  transform: scale(1.2);
+}
+.links a:hover i.fa-google {
+  color: #ea4335;
+}
+.links a:hover i.fa-envelope {
+  color: #34a853;
+}
+.links a:hover i.fa-facebook-f {
+  color: #1877f2;
+}
+.links a:hover i.fa-twitter {
+  color: #1da1f2;
+}
+.links a:hover i.fa-linkedin-in {
+  color: #0a66c2;
+}
+.links a:hover i.fa-github {
+  color: #333;
+}
+.links a:hover i.fa-youtube {
+  color: #ff0000;
+}
+
+.links a i {
+  font-size: 28px;
+  padding: 5px;
+}
+
+@media screen and (max-width: 1200px) {
+  .links a i {
+    font-size: 25px;
+    padding: 3px;
+  }
+  #calendar {
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-grid-rows: (70px);
+    -ms-grid-columns: (70px);
+    grid-template: repeat(5, 70px) / repeat(7, 70px);
+  }
+  .dayContainer {
+    position: relative;
+    outline: 1px solid #333;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 50% 50%;
+    -ms-grid-columns: 50% 50%;
+    grid-template: 50% 50%/50% 50%;
+  }
+  .square:first-child {
+    border-bottom: 1px solid #333;
+    border-right: 1px solid #333;
+  }
+  .square:nth-child(2) {
+    border-bottom: 1px solid #333;
+  }
+  .square:nth-child(3) {
+    border-right: 1px solid #333;
+  }
+  .dayContainer .circle {
+    position: absolute;
+    background: #c96919;
+    border-radius: 50%;
+    border: 1px solid #333;
+    z-index: 0;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .dayContainer .circle .day {
+    font-size: 0.75vw;
+
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+  }
+  #daysLabels {
+    margin: 0 auto;
+    font-size: 10px;
+  }
+  #daysLabels span {
+    width: 70px;
+    display: inline-block;
+    margin: 15px auto 0;
+    font-size: 12px;
+    user-select: none;
+  }
+  #month {
+    margin: 0 auto;
+    display: inline;
+  }
+  #month div {
+    display: inline;
+    cursor: pointer;
+  }
+  #monthLabel {
+    margin: 0;
+    cursor: default;
+    text-shadow: 2px 2px 2px #ccc;
+    display: inline;
+    padding: 0 1em;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  #info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  #taskLabels {
+    width: 324px;
+    text-align: left;
+    list-style: none;
+    padding: 0;
+  }
+  #taskLabels > li {
+    min-width: 230px;
+  }
+  #taskLabels > li input[type="color"] {
+    width: 1.5vw;
+    height: 1.5vw;
+    display: inline-block;
+    margin-right: 1vw;
+    position: relative;
+    top: 0;
+    border: 1px solid #333;
+    cursor: pointer;
+  }
+  #taskLabels > li input {
+    border: none;
+    border-bottom: 1px solid #333;
+    padding: 5px;
+    padding-bottom: 0;
+    outline: none;
+    width: 70%;
+    color: white;
+    font-size: 2vh;
+    background-color: transparent;
+  }
+  #taskExample {
+    width: 70px;
+    height: 70px;
+    position: relative;
+    cursor: pointer;
+  }
+  .emptyDay {
+    background: #c96919;
+  }
+
+  .seanSocial a img {
+    height: 1.5em;
+    border-radius: 50%;
+    position: relative;
+    top: 5px;
+  }
+  .hidden {
+    visibility: hidden;
+  }
+  input::-webkit-color-swatch {
+    border: none;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .todolist {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+  }
+  #calendar {
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-grid-rows: (5vw);
+    -ms-grid-columns: (5vw);
+    grid-template: repeat(5, 6vw) / repeat(7, 6vw);
+  }
+  .dayContainer {
+    position: relative;
+    outline: 1px solid #333;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 50% 50%;
+    -ms-grid-columns: 50% 50%;
+    grid-template: 50% 50%/50% 50%;
+  }
+  .square:first-child {
+    border-bottom: 1px solid #333;
+    border-right: 1px solid #333;
+  }
+  .square:nth-child(2) {
+    border-bottom: 1px solid #333;
+  }
+  .square:nth-child(3) {
+    border-right: 1px solid #333;
+  }
+  .dayContainer .circle {
+    position: absolute;
+
+    border-radius: 50%;
+    border: 1px solid #333;
+    z-index: 0;
+    width: 25px;
+    height: 25px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #c96919;
+  }
+  .dayContainer .circle .day {
+    font-size: 0.75vw;
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+  }
+  #daysLabels {
+    margin: 0 auto;
+    font-size: 14px;
+    margin: 15px auto 0;
+  }
+  #daysLabels span {
+    width: 6vw;
+    display: inline-block;
+    font-size: 14px;
+    user-select: none;
+  }
+  #month {
+    margin: 0 auto;
+    display: inline;
+  }
+  #month div {
+    display: inline;
+    cursor: pointer;
+  }
+  #monthLabel {
+    margin: 0;
+    cursor: default;
+    text-shadow: 2px 2px 2px #ccc;
+    display: inline;
+    padding: 0 1em;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  #info {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  #taskLabels {
+    width: 30vw;
+    text-align: left;
+    list-style: none;
+    padding: 0;
+    float: left;
+    margin: 10px 0;
+  }
+  #taskLabels > li {
+    min-width: 230px;
+  }
+  #taskLabels > li input[type="color"] {
+    width: 1.5vw;
+    height: 1.5vw;
+    display: inline-block;
+    margin-right: 1vw;
+    position: relative;
+    top: 0;
+    border: 1px solid #333;
+    cursor: pointer;
+  }
+  #taskLabels > li input {
+    border: none;
+    border-bottom: 1px solid #333;
+    padding: 5px;
+    padding-bottom: 0;
+    outline: none;
+    width: 70%;
+    color: white;
+    font-size: 2vh;
+    background-color: transparent;
+  }
+  #taskExample {
+    width: 5vw;
+    height: 5vw;
+    position: relative;
+    top: 50px;
+    cursor: pointer;
+  }
+  .emptyDay {
+    background: #c96919;
+  }
+
+  .hidden {
+    visibility: hidden;
+  }
+  input::-webkit-color-swatch {
+    border: none;
+  }
+  body {
+    overflow-x: hidden;
+  }
+}
