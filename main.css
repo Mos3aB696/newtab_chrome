@@ -118,7 +118,7 @@ body {
   .dayContainer .circle .day {
     font-size: 0.75vw;
 
-    cursor: default;
+    cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -272,7 +272,7 @@ body {
   }
   .dayContainer .circle .day {
     font-size: 0.75vw;
-    cursor: default;
+    cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;

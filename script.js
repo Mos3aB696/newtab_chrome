@@ -14,26 +14,18 @@ const MONTH_NAMES = [
   "November",
   "December",
 ];
-const DAY_NAMES = [
-  "Mon",
-  "Tue",
-  "Wed",
-  "Thu",
-  "Fri",
-  "Sat",
-  "Sun",
-];
+const DAY_NAMES = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 const CURRENT_DATE = new Date();
 
 let selectedMonth = CURRENT_DATE.getMonth();
 let availableMonths = [CURRENT_DATE.getMonth()];
 
 let EXAMPLE_TASKS = {
-  0: { color: "#d11141", label: "Wake up at 7:00" },
-  1: { color: "#00b159", label: "Make bed" },
-  2: { color: "#00aedb", label: "Dinner before 23:00" },
-  3: { color: "#f37735", label: "Practice Ukulele" },
-  4: { color: "#ffc425", label: "Go exercise" },
+  0: { color: "#d11141", label: "Fajr Prayer" },
+  1: { color: "#00b159", label: "10 Site/Day" },
+  2: { color: "#00aedb", label: "All Prayer In Mosque" },
+  3: { color: "#f37735", label: "Gym" },
+  4: { color: "#ffc425", label: "Complete Software Tasks" },
 };
 
 function init() {
