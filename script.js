@@ -21,11 +21,11 @@ let selectedMonth = CURRENT_DATE.getMonth();
 let availableMonths = [CURRENT_DATE.getMonth()];
 
 let EXAMPLE_TASKS = {
-  0: { color: "#d11141", label: "Fajr Prayer" },
-  1: { color: "#00b159", label: "10 Site/Day" },
-  2: { color: "#00aedb", label: "All Prayer In Mosque" },
-  3: { color: "#f37735", label: "Gym" },
-  4: { color: "#ffc425", label: "Complete Software Tasks" },
+  0: { color: "#5fb986", label: "Fajr Prayer" },
+  1: { color: "#ffeb3b", label: "10 Site/Day" },
+  2: { color: "#ff9800", label: "All Prayer In Mosque" },
+  3: { color: "#03a9f4", label: "Gym" },
+  4: { color: "#9E9E9E", label: "Complete Software Tasks" },
 };
 
 function init() {
@@ -35,7 +35,7 @@ function init() {
   createInfoStructure();
 }
 
-var checkLocalStorage = () => {
+let checkLocalStorage = () => {
   if (
     window.localStorage.currentMonth === undefined ||
     window.localStorage.data === undefined
@@ -73,7 +73,7 @@ var checkLocalStorage = () => {
   availableMonths = Object.keys(JSON.parse(window.localStorage.data));
 };
 
-var changeMonth = (month) => {
+let changeMonth = (month) => {
   selectedMonth = month;
   document.getElementById("monthLabel").innerText = MONTH_NAMES[selectedMonth];
   checkMonthsAvailability();
@@ -81,7 +81,7 @@ var changeMonth = (month) => {
   setCalendarData();
 };
 
-var updateTasks = () => {
+let updateTasks = () => {
   let inputs = document.querySelectorAll("#taskLabels input[type='text']");
 
   inputs.forEach((task, i) => {
@@ -90,7 +90,7 @@ var updateTasks = () => {
   });
 };
 
-var setCalendarData = () => {
+let setCalendarData = () => {
   let days = document.querySelectorAll("#calendar .dayContainer");
   const startDay = getMonthDayStart();
   const monthDays = getDaysFromCurrentMonth();
@@ -121,7 +121,7 @@ var setCalendarData = () => {
   });
 };
 
-var createCalendarStructure = () => {
+let createCalendarStructure = () => {
   const days = getDaysFromCurrentMonth();
   const startDay = getMonthDayStart();
   let currentData = getCurrentLocalStorageData().data;
@@ -179,7 +179,7 @@ var createCalendarStructure = () => {
   }
 };
 
-var createDateInfo = () => {
+let createDateInfo = () => {
   checkMonthsAvailability();
 
   DAY_NAMES.forEach((day) => {
@@ -190,7 +190,7 @@ var createDateInfo = () => {
   document.getElementById("monthLabel").innerText = MONTH_NAMES[selectedMonth];
 };
 
-var createInfoStructure = () => {
+let createInfoStructure = () => {
   let loadedTasks = getCurrentLocalStorageData().tasks;
 
   for (let i = 0; i < 5; i++) {
@@ -238,7 +238,7 @@ var createInfoStructure = () => {
   }
 };
 
-var colorSquareChanged = (task, inputColor) => {
+let colorSquareChanged = (task, inputColor) => {
   let current = getCurrentLocalStorageData();
   let currentTasks = current.tasks;
   let value =
@@ -288,7 +288,7 @@ var colorSquareChanged = (task, inputColor) => {
   });
 };
 
-var taskNameChanged = (task, inputData) => {
+let taskNameChanged = (task, inputData) => {
   let current = getCurrentLocalStorageData();
   let currentTasks = current.tasks;
 
@@ -310,12 +310,12 @@ var taskNameChanged = (task, inputData) => {
   localStorage.setItem("data", JSON.stringify(data));
 };
 
-var getTaskStatus = (day, task) => {
+let getTaskStatus = (day, task) => {
   let currentData = getCurrentLocalStorageData().data;
   return currentData[day][task];
 };
 
-var setTaskStatus = (day, task, status) => {
+let setTaskStatus = (day, task, status) => {
   let currentData = getCurrentLocalStorageData().data;
   currentData[day][task] = status;
 
@@ -329,7 +329,7 @@ var setTaskStatus = (day, task, status) => {
   localStorage.setItem("data", JSON.stringify(data));
 };
 
-var setColorTaskBackground = (element, task, completed) => {
+let setColorTaskBackground = (element, task, completed) => {
   let currentTasks = getCurrentLocalStorageData().tasks;
 
   if (currentTasks[task] !== undefined)
@@ -337,14 +337,14 @@ var setColorTaskBackground = (element, task, completed) => {
   else element.style.background = completed ? EXAMPLE_TASKS[task].color : "";
 };
 
-var toggleTaskActive = (day, task, element) => {
+let toggleTaskActive = (day, task, element) => {
   let completed = getTaskStatus(day, task);
 
   setTaskStatus(day, task, !completed);
   setColorTaskBackground(element, task, !completed);
 };
 
-var checkMonthsAvailability = () => {
+let checkMonthsAvailability = () => {
   let nextMonth = document.getElementById("nextMonth");
   let previousMonth = document.getElementById("previousMonth");
 
@@ -358,9 +358,9 @@ var checkMonthsAvailability = () => {
 };
 
 /*** UTILS ***/
-var getDaysFromCurrentMonth = () =>
+let getDaysFromCurrentMonth = () =>
   new Date(CURRENT_DATE.getFullYear(), selectedMonth + 1, 0).getDate();
-var getMonthDayStart = () => {
+let getMonthDayStart = () => {
   let startDay = new Date(
     CURRENT_DATE.getFullYear(),
     selectedMonth,
@@ -369,23 +369,23 @@ var getMonthDayStart = () => {
   return startDay === 0 ? 6 : startDay - 1;
 };
 
-var getCurrentLocalStorageData = () =>
+let getCurrentLocalStorageData = () =>
   JSON.parse(window.localStorage.data)[selectedMonth];
 
-var getTaskSquares = () =>
+let getTaskSquares = () =>
   document.querySelectorAll("#taskLabels > li input[type='color']");
 
-var getPreviousMonth = () => {
+let getPreviousMonth = () => {
   let month = selectedMonth - 1;
   return month < 0 ? 11 : month;
 };
 
-var getNextMonth = () => {
+let getNextMonth = () => {
   let month = selectedMonth + 1;
   return month > 11 ? 0 : month;
 };
 
-var rgbToHex = (rgb) => {
+let rgbToHex = (rgb) => {
   if (rgb.includes("#")) return rgb;
   rgb = rgb
     .replace(/(rgb)|\(|\)/g, "")
