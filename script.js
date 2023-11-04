@@ -21,10 +21,10 @@ let selectedMonth = CURRENT_DATE.getMonth();
 let availableMonths = [CURRENT_DATE.getMonth()];
 
 let EXAMPLE_TASKS = {
-  0: { color: "#5fb986", label: "Fajr Prayer" },
-  1: { color: "#ffeb3b", label: "10 Site/Day" },
-  2: { color: "#ff9800", label: "All Prayer In Mosque" },
-  3: { color: "#03a9f4", label: "Gym" },
+  0: { color: "#192655", label: "Fajr Prayer" },
+  1: { color: "#3876BF", label: "Clean Day && 10 Site && 2 Site" },
+  2: { color: "#E1AA74", label: "5 min/day (EdClub)" },
+  3: { color: "#F3F0CA", label: "Gym" },
   4: { color: "#9E9E9E", label: "Complete Software Tasks" },
 };
 
